@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>News App</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<nav>
+			<a href="#" onclick="reload()" class="company-logo">
+				<img src="./assets/logo.png" alt="company logo" />
+			</a>
+			<ul class="list">
+				<li
+					class="hover-link nav-item"
+					id="Cricket"
+					onclick="onNavItemClick('Cricket')"
+				>
+					Cricket
+				</li>
+				<li
+					class="hover-link nav-item"
+					id="Science"
+					onclick="onNavItemClick('Science')"
+				>
+					Science
+				</li>
+				<li
+					class="hover-link nav-item"
+					id="technology"
+					onclick="onNavItemClick('Technology')"
+				>
+					Technology
+				</li>
+			</ul>
+
+			<div class="search-bar flex">
+				<input
+					id="search-text"
+					type="text"
+					class="news-input"
+					placeholder="e.g. World, Sports, Politics, etc."
+				/>
+				<button id="search-button" class="search-button">Search</button>
+			</div>
+		</nav>
+
+		<main>
+			<div class="cards container flex" id="cards-container"></div>
+		</main>
+
+		<template id="template-news-card">
+			<div class="card">
+				<img
+					src="https://via.placeholder.com/400x200"
+					alt="news-image"
+					class="card__image"
+					id="news-img"
+				/>
+				<div class="card__overlay">
+					<div class="card__header">
+						<div class="card__header-text">
+							<h3 class="card__title" id="news-title">kim Cattrall</h3>
+							<span class="card__status" id="news-source">3 hours ago</span>
+						</div>
+					</div>
+					<p class="card__description" id="news-desc">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
+						blanditiis?
+					</p>
+				</div>
+			</div>
+		</template>
+
+		<footer>
+			This page is created by
+			<a href="https://www.linkedin.com/in/abhinavgpt/">Abhinav Gupta</a>
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+</html>
