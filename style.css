@@ -207,3 +207,54 @@ footer {
 footer a {
 	color: #0087fd;
 }
+
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.modal-content {
+	position: relative;
+	width: 80%;
+	max-width: 500px;
+	background-color: var(--surface-color);
+	border-radius: 10px;
+	height: 600px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.modal-banner img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.modal-text {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.close {
+	cursor: pointer;
+	color: #ffffff;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	border: gold 2px solid;
+}
+
+.close:hover {
+	border: white 2px solid;
+	color: #ffe344;
+}

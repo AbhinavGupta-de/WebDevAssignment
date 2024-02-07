@@ -44,7 +44,7 @@ function fillDataInCard(cardClone, article) {
 	newsDesc.innerHTML = article.description;
 
 	const date = new Date(article.publishedAt).toLocaleString('en-US', {
-		timeZone: 'Asia/Jakarta',
+		timeZone: 'Asia/Kolkata',
 	});
 
 	newsSource.innerHTML = `${article.source.name} · ${date}`;
@@ -73,3 +73,48 @@ searchButton.addEventListener('click', () => {
 	currentSelctedNav?.classList.remove('active');
 	currentSelctedNav = null;
 });
+
+searchText.addEventListener('keyup', (e) => {
+	if (e.key === 'Enter') {
+		searchButton.click();
+	}
+});
+
+// Add javascript for modal
+
+/* 		<div class="modal" id="modal">
+			<div class="modal-content">
+				<span class="close" id="close">&times;</span>
+				<h2 id="modal-title">Title</h2>
+				<p id="modal-desc">Description</p>
+				<img
+					src="https://via.placeholder.com/400x200"
+					alt="news-image"
+					class="modal-image"
+					id="modal-img"
+				/>
+			</div>
+		</div>	*/
+
+const modal = document.getElementById('modal');
+const close = document.getElementById('close');
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const modalImg = document.getElementById('modal-img');
+
+close.addEventListener('click', () => {
+	modal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+	if (e.target === modal) {
+		modal.style.display = 'none';
+	}
+});
+
+function openModal(title, desc, img) {
+	modalTitle.innerHTML = title;
+	modalDesc.innerHTML = desc;
+	modalImg.src = img;
+	modal.style.display = 'block';
+}
